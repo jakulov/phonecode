@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Пример виджета выбора телефонного кода страны при вводе номера</title>
+<link rel="stylesheet" href="phonecode.css">
+<style>
+    body {font-family: arial, helvetica, sans-serif; font-size: 14px; margin: 0; padding: 0;}
+    .form {width: 300px; margin: 20px auto;}
+    .field input {font-size: 14px; padding: 2px; border: 0; outline: none;}
+    .field label {padding: 2px 0; display: block; color: #666;}
+    .code {padding: 30px 0 20px 0;}
+    code {background: #eee; display: block; color: #f50;}
+    .licence {font-size: 12px; color: #555; padding: 30px 0;}
+    .licence a {color: #222;}
+</style>
+<script src="jquery-1.11.0.min.js"></script>
+<script src="jquery-ui-1.10.4.custom.min.js"></script>
+<script src="counties.js"></script>
+<script src="phonecode.js"></script>
+<script>
+    $(function(){
+        $('#phone').phonecode({
+            preferCo: 'ru'
+        });
+    });
+</script>
+</head>
+<body>
+<div class="container">
+    <div class="form">
+        <div class="field">
+            <label for="phone">Ваш телефон:</label>
+            <input type="text" id="phone" name="phone" autofocus="true" placeholder="9990000000">
+        </div>
+        <div class="code">
+            Инициализация виджета:
+            <pre><code>
+    $('#phone').phonecode({
+        preferCo: 'ru'
+    });
+            </code></pre>
+        </div>
+        <div class="info">
+            <a href="http://jakulov.ru/">Статья про разработку виджета</a>
+            <br>
+            <br>
+            <a href="https://github.com/jakulov">Скачать на Github</a>
+
+        </div>
+        <Div class="licence">
+            &copy; 2014 MIT Licence Yakov Akulov <a href="http://jakulov.ru">jakulov.ru</a>
+        </Div>
+    </div>
+</div>
+</body>
+</html>
